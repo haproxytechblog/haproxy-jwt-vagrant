@@ -8,7 +8,6 @@ Vagrant.configure("2") do |config|
     server.vm.hostname = "server1"
     server.vm.network "private_network", ip: "192.168.50.20"
     server.vm.provision "shell", path: "init.sh"
-    server.vm.synced_folder "pem/", "/etc/haproxy/pem"
     server.vm.synced_folder "haproxy/", "/etc/haproxy"
   end
  
