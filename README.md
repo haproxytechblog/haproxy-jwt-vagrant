@@ -15,7 +15,7 @@ Set up:
 vagrant up
 ```
 
-1. Get a JSON web token (JWT) from your authentication server.
+1. Get a JSON web token (JWT) from your authentication server by following the *Quick Start* on the Auth0 website for your Machine to Machine application.
 1. Make requests to https://192.168.50.20/api/hamsters and attach the JWT in the Authorization header. You should get a successful response.
 
 ## Troubleshooting
