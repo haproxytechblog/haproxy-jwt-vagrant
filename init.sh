@@ -1,6 +1,6 @@
 #!/bin/bash
 
-add-apt-repository ppa:vbernat/haproxy-1.8
+add-apt-repository ppa:vbernat/haproxy-1.9
 apt update
 apt install -y software-properties-common git build-essential libssl-dev lua5.3 liblua5.3-dev lua-json haproxy
 cp -rf /usr/share/lua/5.2/json /usr/share/lua/5.3/
