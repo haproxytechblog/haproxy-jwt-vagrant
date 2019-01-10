@@ -1,33 +1,18 @@
 #!/bin/bash
 
-add-apt-repository ppa:vbernat/haproxy-1.9
-apt update
-apt install -y software-properties-common git build-essential libssl-dev lua5.3 liblua5.3-dev lua-json haproxy
-cp -rf /usr/share/lua/5.2/json /usr/share/lua/5.3/
-cp /usr/share/lua/5.2/json.lua /usr/share/lua/5.3/
+# Install HAProxy-Lua-JWT library
+git clone https://github.com/haproxytech/haproxy-lua-jwt.git
+cd haproxy-lua-jwt
+chmod +x ./install-ubuntu.sh
+sudo ./install-ubuntu.sh
 
-# Set up chroot
-groupadd haproxy && useradd -g haproxy haproxy
+# Install HAProxy
+sudo add-apt-repository ppa:vbernat/haproxy-1.9
+sudo apt update
+sudo apt install -y haproxy
 
-# Add Lua 5.3 modules to PATH
-ln -s /usr/include/lua5.3/* /usr/include
-
-# Install luaossl - Lua OpenSSL library
-cd /tmp
-git clone https://github.com/wahern/luaossl.git
-cd luaossl
-make && make install
-
-# Install luasocket - Lua Socket library
-cd /tmp
-git clone https://github.com/diegonehab/luasocket.git
-cd luasocket
-make && make install-both
-
-# Copy local Lua files
-cp /vagrant/haproxy/lib/base64.lua /usr/local/share/lua/5.3/
-
-systemctl start haproxy
+sudo cp -rf /vagrant/haproxy/* /etc/haproxy/
+sudo systemctl restart haproxy
 
 # Install Docker
 if [ ! $(which docker) ]; then

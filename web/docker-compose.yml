@@ -5,7 +5,5 @@ services:
     image: example/web
     ports:
     - "8080:80"
-    #volumes:
-    #- "/vagrant/web:/home/node/app"
     build:
       context: .
