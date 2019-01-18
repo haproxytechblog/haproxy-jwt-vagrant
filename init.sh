@@ -15,7 +15,7 @@ sudo cp -rf /vagrant/haproxy/* /etc/haproxy/
 sudo systemctl restart haproxy
 
 # Install Docker
-# if [ ! $(which docker) ]; then
+if [ ! $(which docker) ]; then
   sudo apt update
   sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
