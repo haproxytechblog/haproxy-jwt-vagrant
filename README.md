@@ -1,6 +1,6 @@
 # HAProxy - JWT
 
-Demonstrates verifying OAuth 2 JSON web tokens in HAProxy using Lua code. See the [JWT Lua library here](https://github.com/haproxytech/haproxy-lua-jwt).
+Demonstrates verifying OAuth 2 JSON web tokens in HAProxy using Lua code. See the [HAProxy OAuth library here](https://github.com/haproxytech/haproxy-lua-oauth).
 
 Set up:
 
