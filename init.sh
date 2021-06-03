@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Install HAProxy-Lua-JWT library
-git clone https://github.com/haproxytech/haproxy-lua-jwt.git
-cd haproxy-lua-jwt
+# Install HAProxy-Lua-OAuth library
+git clone https://github.com/haproxytech/haproxy-lua-oauth.git
+cd haproxy-lua-oauth
 chmod +x ./install.sh
-sudo ./install.sh luajwt
+sudo ./install.sh luaoauth
 
 # Install HAProxy
 sudo add-apt-repository ppa:vbernat/haproxy-1.9
