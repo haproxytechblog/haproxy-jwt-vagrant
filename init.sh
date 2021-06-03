@@ -7,7 +7,7 @@ chmod +x ./install.sh
 sudo ./install.sh luaoauth
 
 # Install HAProxy
-sudo add-apt-repository ppa:vbernat/haproxy-1.9
+sudo add-apt-repository ppa:vbernat/haproxy-2.4
 sudo apt update
 sudo apt install -y haproxy
 
